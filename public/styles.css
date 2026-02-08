@@ -54,8 +54,8 @@ body {
     border-bottom: 1px solid var(--glass-border);
 }
 
-.logo {
-    height: 40px;
+.logo-default {
+    height: 35px;
     object-fit: contain;
 }
 
