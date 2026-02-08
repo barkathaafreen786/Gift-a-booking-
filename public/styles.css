@@ -1,0 +1,342 @@
+:root {
+    --primary-color: #D2A7FD;
+    /* Light Lavender */
+    --primary-dark: #b085e0;
+    --secondary-color: #804834;
+    /* Brown - Coimbatore */
+    --background-color: #fcfcfc;
+    --text-color: #595959;
+    --white: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+
+    --font-heading: 'Anton', sans-serif;
+    --font-body: 'Rubik', sans-serif;
+    --font-display: 'Chewy', cursive;
+
+    /* Cool to Warm Spectrum */
+    --spectrum-cyan: rgb(74, 234, 220);
+    --spectrum-purple: rgb(151, 120, 209);
+    --spectrum-magenta: rgb(207, 42, 186);
+    --spectrum-red: rgb(238, 44, 130);
+    --spectrum-orange: rgb(251, 105, 98);
+    --spectrum-yellow: rgb(254, 248, 76);
+    --gradient-cool-warm: linear-gradient(135deg, var(--spectrum-cyan) 0%, var(--spectrum-purple) 20%, var(--spectrum-magenta) 40%, var(--spectrum-red) 60%, var(--spectrum-orange) 80%, var(--spectrum-yellow) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+    height: 40px;
+    object-fit: contain;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.book-now-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--text-color);
+    /* Black/Dark for contrast */
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.book-now-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    background: radial-gradient(circle at top right, rgba(210, 167, 253, 0.2), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(210, 167, 253, 0.2), transparent 40%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 50%;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-family: var(--font-heading);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.highlight {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: rgba(210, 167, 253, 0.4);
+    z-index: -1;
+    transform: skewX(-15deg);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+.cta-button {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    /* Dark text on lavender usually looks better/more playful than white */
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(210, 167, 253, 0.4);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(210, 167, 253, 0.6);
+}
+
+/* Experiences Section */
+.experiences-section {
+    padding: 6rem 10%;
+    background-color: var(--white);
+}
+
+.section-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.experience-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(210, 167, 253, 0.3);
+}
+
+.card-image-container {
+    height: 250px;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.experience-card:hover .card-image {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.card-price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    display: block;
+    margin-top: 1rem;
+}
+
+/* Booking Section */
+.booking-section {
+    padding: 6rem 10%;
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+    display: flex;
+    justify-content: center;
+}
+
+.booking-container {
+    width: 100%;
+    max-width: 600px;
+    background: var(--glass-bg);
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+}
+
+.booking-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background: white;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    /* Keep distinct text color */
+    border: none;
+    border-radius: 50px;
+    /* Fully rounded button */
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-dark);
+    color: white;
+    box-shadow: 0 10px 20px rgba(210, 167, 253, 0.4);
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 8rem;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 3rem;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .navbar {
+        padding: 1rem 5%;
+    }
+}

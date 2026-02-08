@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift A Scene - Booking Experience</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Chewy&family=Luckiest+Guy&family=Permanent+Marker&family=Outfit:wght@300;400;600;700&family=Rubik:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img class="logo-default"
+                src="https://scenebooking.com/wp-content/uploads/2024/12/scene_logo-black_color.png" alt="SCENE"
+                itemprop="url">
+        </div>
+        <div class="nav-links">
+            <a href="#experiences">Experiences</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <button class="book-now-btn">Book Now</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Gift A <span class="highlight">Scene</span></h1>
+            <p class="hero-subtitle">The perfect gift isn't a thing, it's a memory. Gift a unique experience today.</p>
+            <a href="#experiences" class="cta-button">Explore Gifts</a>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1"></div>
+            <div class="floating-card card-2"></div>
+        </div>
+    </header>
+
+    <section id="experiences" class="experiences-section">
+        <h2 class="section-title">Gift an Experience</h2>
+        <div class="experiences-grid" id="experiences-grid">
+            <!-- Cards will be injected by JS -->
+        </div>
+    </section>
+
+    <section id="booking" class="booking-section">
+        <div class="booking-container">
+            <h2 class="section-title">Personalize Your Gift</h2>
+            <form id="booking-form" class="booking-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Who is this gift from?">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required
+                        placeholder="Where should we send the receipt?">
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-name">Recipient's Name</label>
+                    <input type="text" id="recipient-name" name="recipient-name" required
+                        placeholder="Who is the lucky person?">
+                </div>
+
+                <div class="form-group">
+                    <label for="scene-select">Select Experience to Gift</label>
+                    <select id="scene-select" name="scene" required>
+                        <option value="" disabled selected>Choose a memory...</option>
+                        <!-- Options injected by JS -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Preferred Date (Optional)</label>
+                    <input type="date" id="date" name="date">
+                    <small style="color: #666; font-size: 0.8rem; margin-top: 5px; display: block;">Leave blank if you
+                        want them to choose.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Personal Message</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Write a sweet note..."
+                        style="width: 100%; padding: 1rem; border: 2px solid #eee; border-radius: 12px; font-family: 'Outfit', sans-serif; resize: vertical;"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" style="margin-top: 1rem;">Send Gift</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Gift A Scene. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
